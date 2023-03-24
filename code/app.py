@@ -1,7 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from prediction import predict
+#from prediction import predict
+import pickle
+
+def predict(data):
+    rf = pickle.load(open(r'..\model\model_v1.pkl','rb'))
+    return rf.predict(data)
 
 st.title('Catalytic Reformer')
 st.markdown('Predict the Values like Reformate RON, C5+ RON, C6+ RON')
