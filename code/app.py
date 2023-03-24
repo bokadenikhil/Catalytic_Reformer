@@ -23,6 +23,6 @@ with col3:
     ratio = st.slider('H2HC Ratio - Mol/Mol', min_value=2, max_value=5, value=4)
 
 if st.button('Predict'):
-    rf = pickle.load(open(r'model_v1.pkl','rb'))
+    rf = pickle.load(open(r'..\model\model_v1.pkl','rb'))
     result = rf.predict(np.array([[ff, r1T, r2T, r3T,PST, ratio]]))
     st.text(result[0])
