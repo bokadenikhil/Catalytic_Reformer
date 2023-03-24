@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 #from prediction import predict
 import pickle
+import sklearn
 
 st.title('Catalytic Reformer')
 st.markdown('Predict the Values like Reformate RON, C5+ RON, C6+ RON')
