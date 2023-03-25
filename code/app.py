@@ -6,7 +6,7 @@ import joblib
 import sklearn
 import os
 
-os.chdir('Catalytic_Reformer/code')
+#os.chdir('Catalytic_Reformer/code')
 st.title('Catalytic Reformer')
 st.markdown('Predict the Values like Reformate RON, C5+ RON, C6+ RON')
 
