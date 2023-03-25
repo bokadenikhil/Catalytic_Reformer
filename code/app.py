@@ -26,7 +26,7 @@ with col3:
 
 if st.button('Predict'):
     try:
-        rf = joblib.load(r'model_v1.sav')
+        rf = joblib.load(r'Catalytic_Reformer/code/model_v1.sav')
         result = rf.predict(np.array([[ff, r1T, r2T, r3T,PST, ratio]]))
         st.text(result[0])
     except:
