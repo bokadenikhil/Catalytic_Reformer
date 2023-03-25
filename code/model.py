@@ -25,6 +25,10 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=test_size,random_
 y_train = y_train.values
 y_test = y_test.values
 
+rf = RandomForestRegressor()
+rf.fit(X_train,y_train)
+y_pred = rf.predict(X_test)
+
 print('R2 Score:', r2_score(y_test,y_pred))
 
 pickle.dump(rf,open(r'..\model\model_v1.pkl','wb'))
