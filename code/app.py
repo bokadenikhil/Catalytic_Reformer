@@ -6,7 +6,6 @@ import joblib
 import sklearn
 import os
 
-os.chdir('Catalytic_Reformer')
 st.title('Catalytic Reformer')
 st.markdown('Predict the Values like Reformate RON, C5+ RON, C6+ RON')
 
@@ -26,7 +25,8 @@ with col3:
     ratio = st.slider('H2HC Ratio - Mol/Mol', min_value=2, max_value=5, value=4)
 
 if st.button('Predict'):
-    os.chdir(code)
+    if 'code' not in os.getcwd():
+        os.chdir('code')
     try:
         rf = joblib.load(r'model_v1.sav')
         result = rf.predict(np.array([[ff, r1T, r2T, r3T,PST, ratio]]))
