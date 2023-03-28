@@ -28,6 +28,8 @@ if st.button('Predict'):
     try:
         rf = joblib.load(r'/app/catalytic_reformer/code/model_v1.sav')
         result = rf.predict(np.array([[ff, r1T, r2T, r3T,PST, ratio]]))
-        st.text(result[0])
+        st.text('RON:',result[0][0])
+        st.text('C5+ RON:',result[0][1])
+        st.text('C6+ RON:',result[0][2])
     except:
         st.text('Model Not Found')
